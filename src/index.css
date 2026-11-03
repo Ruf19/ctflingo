@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0e14;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2a3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3f52;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.difficulty-beginner { color: #4ade80; }
+.difficulty-intermediate { color: #f59e0b; }
+.difficulty-advanced { color: #f97316; }
+.difficulty-expert { color: #ef4444; }
+
+.badge-beginner { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+.badge-intermediate { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-advanced { background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
+.badge-expert { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+.terminal-bg {
+  background: #0d1117;
+  border: 1px solid #1e2d3d;
+}
+
+.card-hover {
+  transition: all 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.nav-item-active {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border-right: 2px solid #00ff88;
+}
+
+.nav-item {
+  color: #8892a4;
+  transition: all 0.15s ease;
+}
+.nav-item:hover {
+  color: #c8d3e0;
+  background: rgba(255,255,255,0.04);
+}
+
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(0,255,136,0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-popupIn {
+  animation: popupIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popupIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* --- CTFLingo Custom Animations & Theme --- */
+
+/* --- CTFLingo Hacker Theme Additions --- */
+
+/* The glowing HUD border effect */
+.hud-frame {
+  position: relative;
+  padding: 2rem 3rem;
+  border: 1px solid rgba(132, 204, 22, 0.2);
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px rgba(132, 204, 22, 0.05), inset 0 0 20px rgba(132, 204, 22, 0.02);
+  clip-path: polygon(
+    20px 0, 100% 0, 
+    100% calc(100% - 20px), calc(100% - 20px) 100%, 
+    0 100%, 0 20px
+  );
+}
+
+.hud-frame::before, .hud-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #84cc16;
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+
+.hud-frame::before {
+  top: -1px; left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.hud-frame::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Terminal Window Mockup styling */
+.terminal-mock {
+  background: rgba(9, 9, 11, 0.8);
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(132, 204, 22, 0.05);
+  backdrop-filter: blur(4px);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #27272a;
+  background: rgba(24, 24, 27, 0.5);
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3f3f46;
+}
+
+/* Matrix/Circuit Grid Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}

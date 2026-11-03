@@ -1,0 +1,5 @@
+TELNET LOGIN SESSION:
+User: admin
+Pass: supersecret
+FLAG: flag{telnet_traffic_is_unencrypted}
+Session terminated.
