@@ -1,8 +1,4 @@
-# CTFLingo
 
-A modern, gamified CTF (Capture The Flag) cybersecurity learning platform built with React, Vite, Tailwind CSS, and **Local SQLite**.
-
-Runs 100% locally with zero external database dependencies — fully self-contained and ready to push to GitHub!
 
 ---
 
